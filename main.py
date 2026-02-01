@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 
-# ---------------- Abstract Classes ----------------
+
 
 class Vehicle(ABC):
     def __init__(self, plate_number):
@@ -18,7 +18,7 @@ class PricingStrategy(ABC):
         pass
 
 
-# ---------------- Vehicle Types ----------------
+
 
 class Car(Vehicle):
     def get_rate(self):
@@ -35,7 +35,7 @@ class Truck(Vehicle):
         return 10
 
 
-# ---------------- Pricing Strategies ----------------
+
 
 class PeakPricing(PricingStrategy):
     def calculate_fee(self, hours, rate):
@@ -52,7 +52,7 @@ class WeekendPricing(PricingStrategy):
         return hours * rate * 1.2
 
 
-# ---------------- Parking Ticket ----------------
+
 
 class ParkingTicket:
     def __init__(self, vehicle, pricing_strategy):
@@ -74,7 +74,7 @@ class ParkingTicket:
         return self.pricing_strategy.calculate_fee(hours, rate)
 
 
-# ---------------- Parking Lot ----------------
+
 
 class ParkingLot:
     def __init__(self, capacity=300):
@@ -108,7 +108,7 @@ class ParkingLot:
         print(f"Parking Fee: ${fee}")
 
 
-# ---------------- Sample Usage ----------------
+
 
 if __name__ == "__main__":
     parking_lot = ParkingLot()
